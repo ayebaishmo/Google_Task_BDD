@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1745589078893,
+    "title": "Clean apartment",
+    "description": "Vacuum and dust",
+    "due_date": "2025-05-10",
+    "priority": "High",
+    "status": "Pending",
+    "created_at": "2025-04-25T16:51:18.893025",
+    "updated_at": "2025-04-25T16:51:18.896066",
+    "category": null,
+    "tags": []
+  }
+]
