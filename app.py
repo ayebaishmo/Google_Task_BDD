@@ -3,8 +3,13 @@ class ToDoApp:
         self.tasks = []
 
     def add_task(self, title):
-        if not title.strip():  
+        # Check if the title is an empty string
+        if title == "":
             raise ValueError("Task name cannot be empty")
+        # Check if the title contains only spaces
+        elif not title.strip():  # This handles the case where the title is spaces-only
+            raise ValueError("Task name cannot be only spaces")
+        
         self.tasks.append({"title": title, "done": False})
 
     def list_tasks(self):
@@ -33,29 +38,3 @@ class ToDoApp:
                 return
         raise ValueError(f"Task '{old_title}' not found!")
 
-# Create an instance of the app
-todo_app = ToDoApp()
-
-# Add tasks
-todo_app.add_task("Buy groceries")
-todo_app.add_task("Complete Python project")
-todo_app.add_task("Read a book")
-
-# List tasks
-print("Current tasks:")
-for task in todo_app.list_tasks():
-    print(task)
-
-# Complete a task
-todo_app.complete_task("Buy groceries")
-
-# Edit a task
-todo_app.edit_task("Read a book", "Read a Bible")
-
-# Delete a task
-todo_app.delete_task("Complete Python project")
-
-# List tasks after modifications
-print("\nUpdated tasks:")
-for task in todo_app.list_tasks():
-    print(task)
